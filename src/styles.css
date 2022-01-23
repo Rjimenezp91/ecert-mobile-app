@@ -21,4 +21,14 @@ body{
     min-height: 100vh;
 }
 
+.mainButton{
+    width: 180px;
+    background: var(--mainColor);
+    color: #fff;
+}
+button.mat-focus-indicator.loginBtn.mat-raised-button.mat-button-base.mat-button-disabled {
+    background: var(--lightray);
+}
+
+
 

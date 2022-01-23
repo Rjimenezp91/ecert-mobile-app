@@ -1,5 +1,7 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ export class LoginComponent implements OnInit {
   regEx = /^[0-9]+[-|‐]{1}[0-9kK]{1}$/
   isSecret:boolean = true;
   public loginForm: FormGroup;
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.createFormGroup();
@@ -35,10 +37,21 @@ export class LoginComponent implements OnInit {
     
    this.validaRut(this.loginForm.get('run')?.value).then(result => {
      if (result){
-        console.log('pasamos')
+        this.successSnackBar();
         return
      }
-     console.log('no pasa nada oiga');
+
+     const customButton = Swal.mixin({
+      customClass: {
+        confirmButton: 'mat-raised-button mainButton',
+      },
+      buttonsStyling: false
+    })
+    customButton.fire({
+      icon: 'error',
+      title: 'RUN incorrecto',
+      text: 'El RUN ingresado no existe',
+    })
      
    })
   }
@@ -69,4 +82,8 @@ validaDV(T: number) {
         S = (S + T % 10 * (9 - M++ % 6)) % 11;
     return S ? S - 1 : 'k';
 };
+
+successSnackBar(){
+  this._snackBar.open('Login exitoso')
+}
 }

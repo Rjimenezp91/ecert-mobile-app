@@ -11,7 +11,7 @@
                 <input matInput formControlName="run" placeholder="Ingrese su RUN">
                 
             </mat-form-field>
-            <mat-error *ngIf="getRun.hasError('pattern')">
+            <mat-error *ngIf="getRun.hasError('pattern')" >
                 ingrese un RUN <strong>válido</strong>
             </mat-error>
         </div>
@@ -25,7 +25,10 @@
             </div>
 
         </mat-form-field>
-        <button mat-raised-button class="loginBtn">Iniciar Sesión</button>
+        <mat-error *ngIf="getPassword.hasError('minlength')" >
+            la contraseña debe tener al menos <strong>5 carácteres</strong> 
+        </mat-error>
+        <button mat-raised-button [disabled]="getRun.hasError('required') || getPassword.hasError('required')" class="loginBtn">Iniciar Sesión</button>
     </form>
     
     {{this.loginForm.value | json}}
