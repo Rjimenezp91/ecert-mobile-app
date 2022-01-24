@@ -28,10 +28,8 @@
         <mat-error *ngIf="getPassword.hasError('minlength')" >
             la contraseña debe tener al menos <strong>5 carácteres</strong> 
         </mat-error>
-        <button mat-raised-button [disabled]="getRun.hasError('required') || getPassword.hasError('required')" class="loginBtn">Iniciar Sesión</button>
+        <button mat-raised-button [disabled]="getRun.invalid || getPassword.invalid" class="loginBtn">Iniciar Sesión</button>
     </form>
-    
-    {{this.loginForm.value | json}}
     <p class="link_bold">¿Olvidó su contraseña?</p>
     <hr class="divisor">
 

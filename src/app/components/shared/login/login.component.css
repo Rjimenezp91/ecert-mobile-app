@@ -2,6 +2,7 @@
     position: relative;
     height: 90vh;
     min-height: 400px;
+    max-height: 760px;
     width: 80vw;
     /* max-width: 500px; */
     display: flex;
@@ -36,10 +37,10 @@ mat-form-field {
     font-size: 1.5em;
 
 }
-.loginContainer .containerErrors{
+/* .loginContainer .containerErrors{
     display: flex;
     margin-bottom: 15px;
-}
+} */
 
 .passwordContainer{
     display: flex; 

@@ -2,6 +2,7 @@
 
 :root{
     --mainColor: #0055b8;
+    --lightMainColor: #aabbee;
     --gray: #808285;
     --lightray: #aeb0b3;
 }
@@ -29,6 +30,19 @@ body{
 button.mat-focus-indicator.loginBtn.mat-raised-button.mat-button-base.mat-button-disabled {
     background: var(--lightray);
 }
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.mainContainer{
+    min-height: 100vh;
+    width: 100vw;
+}
 
-
-
+.mainContainer .containerLinks{
+    
+}

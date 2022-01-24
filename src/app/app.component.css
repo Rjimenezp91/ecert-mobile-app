@@ -1,0 +1,79 @@
+.mainContainer .logo{
+    height: 50px;
+}
+
+.mainContainer .containerLinks{
+    width: 50vw;
+    max-width: 200px;
+}
+
+.mainContainer .containerLinks .link{
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+.mainContainer .containerLinks .link a{
+    text-decoration: none;
+    color: var(--gray);
+}
+.mainContainer .containerLinks .link .active a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--mainColor);
+
+}
+.mainContainer .containerLinks  .link:hover{
+    text-decoration: none;
+    background-color: var(--mainColor);
+    transition: .3s ease-in-out;
+    color: #fff;
+}
+.mainContainer .containerLinks  .link:hover a{
+    text-decoration: none;
+    transition: .3s ease-in-out;
+    color: #fff;
+}
+
+li.link.active {
+
+    color: var(--mainColor);
+    background: var(--lightMainColor);
+    height: inherit;
+    width: inherit;
+    font-weight: bold;
+}
+
+.mainContainer .containerLinks .link a.active {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--mainColor);
+}
+.mainContainer .containerLinks .link:hover a.active {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.mainContainer .containerLinks .link .matIcon {
+    margin-right: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.mainContainer .containerLinks .link:hover .matIcon {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+
+.mainContainer .containerLinks .link .active .matIcon{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--mainColor);
+
+}
+
+.matIcon{
+    margin-right: 5px;
+    color: var(--gray);
+}

@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+
 import Swal from 'sweetalert2'
 
 @Component({
@@ -11,11 +14,16 @@ import Swal from 'sweetalert2'
 export class LoginComponent implements OnInit {
   regEx = /^[0-9]+[-|‐]{1}[0-9kK]{1}$/
   isSecret:boolean = true;
+  isLogged:boolean = false;
   public loginForm: FormGroup;
-  constructor(private _snackBar: MatSnackBar) { }
+  @Output() event = new EventEmitter<boolean>();
+
+  constructor(private _snackBar: MatSnackBar, private _authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.createFormGroup();
+    console.log('this.isLogged',this.isLogged);
+    
   }
   get getRun(){
     return this.loginForm.get('run');
@@ -38,7 +46,13 @@ export class LoginComponent implements OnInit {
    this.validaRut(this.loginForm.get('run')?.value).then(result => {
      if (result){
         this.successSnackBar();
-        return
+        this._authService.authUser();
+        this.isLogged = this._authService.isLogged
+        if(this.isLogged){
+          this.event.emit(this.isLogged)
+          this.router.navigate(['/home'])
+        }
+        return; 
      }
 
      const customButton = Swal.mixin({
