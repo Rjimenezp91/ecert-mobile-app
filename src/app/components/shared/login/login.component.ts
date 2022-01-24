@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } fro
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { SocialAuthService, SocialUser  } from "angularx-social-login";
 
 import Swal from 'sweetalert2'
 
@@ -15,14 +16,17 @@ export class LoginComponent implements OnInit {
   regEx = /^[0-9]+[-|‐]{1}[0-9kK]{1}$/
   isSecret:boolean = true;
   isLogged:boolean = false;
-  public loginForm: FormGroup;
+  user: SocialUser;
+  loginForm: FormGroup;
+
+
+
   @Output() event = new EventEmitter<boolean>();
 
-  constructor(private _snackBar: MatSnackBar, private _authService: AuthService, private router: Router) { }
+  constructor(private _snackBar: MatSnackBar, private _authService: AuthService, private authService: SocialAuthService,private router: Router) { }
 
   ngOnInit(): void {
     this.createFormGroup();
-    console.log('this.isLogged',this.isLogged);
     
   }
   get getRun(){
@@ -41,32 +45,24 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log('loginForm', this.loginForm);
-    
    this.validaRut(this.loginForm.get('run')?.value).then(result => {
      if (result){
         this.successSnackBar();
         this._authService.authUser();
-        this.isLogged = this._authService.isLogged
-        if(this.isLogged){
-          this.event.emit(this.isLogged)
-          this.router.navigate(['/home'])
-        }
-        return; 
+        this.authService.authState.subscribe((user) =>{
+          this.user = user;
+          console.log('USER :>>> ', this.user);
+          
+        })
+        // this.isLogged = this._authService.isLogged
+        // if(this.isLogged){
+        //   this.event.emit(this.isLogged)
+        //   this.router.navigate(['/home'])
+        // }
+        // return; 
      }
+    //  this.errorSwal();
 
-     const customButton = Swal.mixin({
-      customClass: {
-        confirmButton: 'mainButton',
-        cancelButton: 'mat-raised-button',
-      },
-      buttonsStyling: false
-    })
-    customButton.fire({
-      icon: 'error',
-      title: 'RUN incorrecto',
-      text: 'El RUN ingresado no existe',
-    })
      
    })
   }
@@ -100,5 +96,20 @@ validaDV(T: number) {
 
 successSnackBar(){
   this._snackBar.open('Login exitoso')
+}
+
+errorSwal(){
+  const customButton = Swal.mixin({
+    customClass: {
+      confirmButton: 'mainButton',
+      cancelButton: 'mat-raised-button',
+    },
+    buttonsStyling: false
+  })
+  return customButton.fire({
+    icon: 'error',
+    title: 'RUN incorrecto',
+    text: 'El RUN ingresado no existe',
+  })
 }
 }

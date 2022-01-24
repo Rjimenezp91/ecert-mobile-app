@@ -10,6 +10,7 @@ import { MaterialModule } from './modules/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms' 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login';
 
 import { HomeComponent } from './components/shared/home/home.component'
 import { AuthService } from './services/auth.service';
@@ -33,8 +34,24 @@ import { DialogPdfComponent } from './components/shared/dialogs/dialog-pdf/dialo
     ReactiveFormsModule,
     FormsModule,
     PdfViewerModule,
+    SocialLoginModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              'clientId'
+            )
+          }
+        
+        ]
+      } as SocialAuthServiceConfig,
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
