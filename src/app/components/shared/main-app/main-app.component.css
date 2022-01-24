@@ -1,9 +1,0 @@
-
-.mainContainer{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-}
-.mainContainer .logo{
-    height: 50px;
-}

@@ -5,6 +5,7 @@
 .mainContainer .containerLinks{
     width: 50vw;
     max-width: 200px;
+    justify-content: space-between;
 }
 
 .mainContainer .containerLinks .link{
@@ -76,4 +77,9 @@ li.link.active {
 .matIcon{
     margin-right: 5px;
     color: var(--gray);
+}
+
+.separated{
+    display: flex;
+    justify-content: space-between;
 }

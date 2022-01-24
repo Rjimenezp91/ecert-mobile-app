@@ -57,7 +57,8 @@ export class LoginComponent implements OnInit {
 
      const customButton = Swal.mixin({
       customClass: {
-        confirmButton: 'mat-raised-button mainButton',
+        confirmButton: 'mainButton',
+        cancelButton: 'mat-raised-button',
       },
       buttonsStyling: false
     })

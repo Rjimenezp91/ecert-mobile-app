@@ -1,1 +1,99 @@
-<p>mis-documentos works!</p>
+<div class="">
+  <h1 class="vw100">Mis Documentos</h1>
+
+  <table mat-table [dataSource]="dataSourceDocuments" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="isChecked">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
+        <mat-checkbox
+          [checked]="element.isChecked"
+          (click)="changeChkState(element.id)"
+        ></mat-checkbox>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Documento">
+      <th mat-header-cell *matHeaderCellDef>{{ "documento" | uppercase }}</th>
+      <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
+        <p class="tdcontent">{{ element.file }}</p>
+      </td>
+      <!-- *matCellDef="let row; let index = index" [formGroupName]="index" -->
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Solicitante">
+      <th mat-header-cell *matHeaderCellDef>
+        <p class="tdcontent">SOLICITANTE</p>
+      </th>
+      <td class="center tdContainer" mat-cell *matCellDef="let element" class="tdContainer">
+        <p class="tdcontent">{{ element.solicitante }}</p>
+      </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Fecha">
+      <th  mat-header-cell *matHeaderCellDef>
+        <p class="tdcontent">FECHA</p>
+      </th>
+      <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
+        <p class="tdcontent"></p>
+        {{ element.fecha | date: "dd/mm/yyyy" }}
+      </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Estado">
+      <th mat-header-cell *matHeaderCellDef>
+        <p class="tdcontent">ESTADO</p>
+      </th>
+      <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
+        <p class="tdcontent">
+          {{ element.estado }}
+        </p>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Progreso">
+      <th mat-header-cell *matHeaderCellDef>
+        <p class="tdcontent">PROGRESO</p>
+      </th>
+      <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
+        <p class="tdcontent">
+          {{ element.progreso }}
+        </p>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Opciones">
+      <th mat-header-cell *matHeaderCellDef>
+        <p class="tdcontent">OPCIONES</p>
+      </th>
+      <td class="center"  mat-cell *matCellDef="let element" class="tdContainer">
+          <mat-icon [matMenuTriggerFor]="menu" style="margin-left: 30px">more_vert</mat-icon>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item class="btn-mat-menu" >
+            <span class="item-mat-menu" >Borrar</span>
+          </button>
+          <button mat-menu-item class="btn-mat-menu" >
+            <span class="item-mat-menu">Cancelar</span>
+          </button>
+          <button mat-menu-item class="btn-mat-menu">
+            <a [href]="pdfSrc" target="_blank" class="linkToRef">Descargar</a>
+          </button>
+          <button mat-menu-item class="btn-mat-menu">
+            <span class="item-mat-menu">Enviar por correo</span>
+        </button>
+        <button mat-menu-item class="btn-mat-menu" (click)="openDialogPdf()">
+              <span class="item-mat-menu">Visualizar</span>
+
+          </button>
+        </mat-menu>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <hr />
+</div>

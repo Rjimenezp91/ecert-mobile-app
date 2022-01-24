@@ -39,10 +39,14 @@ button.mat-focus-indicator.loginBtn.mat-raised-button.mat-button-base.mat-button
     flex-direction: column;
 }
 .mainContainer{
-    min-height: 100vh;
+    min-height: calc(100vh - 64px);
     width: 100vw;
 }
 
-.mainContainer .containerLinks{
-    
+.container{
+    padding: 5px;
+    min-height: calc(100vh - 64px);
+}
+.vw100{
+width: 100vw;
 }

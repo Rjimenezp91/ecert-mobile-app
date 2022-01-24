@@ -12,4 +12,7 @@ export class AuthService {
   authUser(){
     return this.isLogged = true;
   }
+ logOut(){
+    return this.isLogged = false;
+  }
 }

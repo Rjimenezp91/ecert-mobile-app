@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,29 @@ export class AppComponent implements OnInit {
   setUserAuth($event){
     this.userAuth = $event;
     
+  }
+  logOut(){
+    this._auth.isLogged = false;
+    this.userAuth = this._auth.isLogged;
+    
+  }
+
+  swatLogOut(){
+    const customButton = Swal.mixin({
+      customClass: {
+        confirmButton: 'mat-raised-button',
+        cancelButton: 'mat-raised-button',
+      },
+      buttonsStyling: false
+    })
+    customButton.fire({
+      icon: 'info',
+      title: 'Saliendo',
+      text: '¿Estás seguro de que deseas salir?',
+      showCancelButton: true,
+      cancelButtonText: 'cancel'
+    })
+     
   }
 
 }

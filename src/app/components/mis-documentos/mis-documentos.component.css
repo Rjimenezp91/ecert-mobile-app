@@ -1,0 +1,20 @@
+.tdContainer{
+margin: 10px 20px;
+
+}
+.tdcontent{
+    margin: 0 15px 0 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.linkToRef{
+    text-decoration: none;
+    color: #000000de;
+}

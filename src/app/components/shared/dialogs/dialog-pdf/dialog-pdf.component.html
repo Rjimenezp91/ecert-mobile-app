@@ -1,0 +1,18 @@
+<div *ngIf="isLoaded" style=" display: flex; flex-direction: column;">
+    <button (click)="prevPage()" [disabled]="page === 1">Página previa</button>
+
+    <button (click)="nextPage()" [disabled]="page === totalPages">Siguiente página</button>
+
+    <button (click)="zoomOut()" >Alejar</button>
+    <button (click)="zoomIn()" >Ampliar</button>
+</div>
+
+<pdf-viewer [src]="pdfSrc"
+[render-text]="true"
+[original-size]="false"
+style="width: 400px; height: 500px"
+[show-all]="false"
+[page]="page"
+[zoom]= "zoom"
+(after-load-complete)="afterLoadComplete($event)"
+></pdf-viewer>
