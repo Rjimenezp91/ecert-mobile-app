@@ -10,7 +10,7 @@ export class DialogPdfComponent implements OnInit {
   page: number = 1;
   totalPages: number;
   isLoaded: boolean = false;
-  zoom: number = .5
+  zoom: number = 1
   
 
   constructor() { }
@@ -31,9 +31,17 @@ export class DialogPdfComponent implements OnInit {
   }
   zoomIn() {
     this.zoom += .5
+
+
+    console.log(this.zoom);
+    
   }
   zoomOut() {
     this.zoom -= .5
+    if(this.zoom <= 0){
+      this.zoom = 0;
+    }
+    console.log(this.zoom);
   }
 
 

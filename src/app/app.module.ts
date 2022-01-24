@@ -13,7 +13,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { HomeComponent } from './components/shared/home/home.component'
 import { AuthService } from './services/auth.service';
-import { MainAppComponent } from './components/shared/main-app/main-app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { MisDocumentosComponent } from './components/mis-documentos/mis-documentos.component';
 import { DialogPdfComponent } from './components/shared/dialogs/dialog-pdf/dialog-pdf.component';
@@ -22,7 +21,6 @@ import { DialogPdfComponent } from './components/shared/dialogs/dialog-pdf/dialo
     AppComponent,
     LoginComponent,
     HomeComponent,
-    MainAppComponent,
     HeaderComponent,
     MisDocumentosComponent,
     DialogPdfComponent

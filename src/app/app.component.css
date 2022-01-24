@@ -1,4 +1,8 @@
-.mainContainer .logo{
+.mainContainer{
+    height: 100vh;
+}
+
+mainContainer .logo{
     height: 50px;
 }
 

@@ -1,0 +1,44 @@
+.modalContainer{
+    /* height: 100vh; */
+    width: 500px;
+}
+
+.pdfButton{
+    width: 100px;
+    height: auto;
+    color: white;
+    background-color: var(--mainColor);
+}
+.pdf{
+    height: 700px;
+    width: 100vw;
+}
+.fab{
+    border-radius: 50%;
+}
+.btnContainer{
+    display: flex; 
+    flex-direction: row;
+    justify-content: start;
+}
+.mat-fab{
+background-color: var(--mainColor);
+color: white;
+height: 30px;
+width: 30px;
+}
+.disabled{
+    background-color: var(--gray);
+}
+
+.page {
+    height: auto !important;
+}
+
+/* ::ng-deep.ng2-pdf-viewer-container {
+    overflow-x: auto;
+    position: absolute;
+    height: 100%;
+    width: 270px !important;
+    -webkit-overflow-scrolling: touch;
+} */

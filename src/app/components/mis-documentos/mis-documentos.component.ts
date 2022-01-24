@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DocumentPdf } from "../../interfaces/document";
 import { Data } from "../../../assets/Data/dataTable"
 import { MatTableDataSource } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogPdfComponent } from '../shared/dialogs/dialog-pdf/dialog-pdf.component';
 
 const ELEMENT_DATA: any[] = [
@@ -75,6 +75,9 @@ this.documents.filter( item =>{
   }
 
   openDialogPdf(){
-  const dialogRef = this.dialog.open(DialogPdfComponent)
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.maxWidth = '100vw';
+    
+  const dialogRef = this.dialog.open(DialogPdfComponent, dialogConfig)
   }
 }
