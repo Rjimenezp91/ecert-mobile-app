@@ -4,6 +4,7 @@ margin: 10px 20px;
 }
 .tdcontent{
     margin: 0 15px 0 10px;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -21,4 +22,30 @@ margin: 10px 20px;
 
 .container{
     width: 100vw
+}
+
+.icon{
+    background-color: green;
+    height: 5px;
+    width: 5px;
+}
+.circle{
+    margin-top: 5px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.red{
+    background-color: red;
+}
+.purple{
+    background-color: purple;
 }

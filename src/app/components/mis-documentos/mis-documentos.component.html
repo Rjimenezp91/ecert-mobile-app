@@ -1,17 +1,27 @@
 <div class="container">
   <h1 class="vw100">Mis Documentos</h1>
+<div
+[formGroup]="documentsFormGroup"
+>
 
-  <table mat-table [dataSource]="dataSourceDocuments" class="mat-elevation-z8">
+
+  <table 
+    mat-table 
+    [dataSource]="dataSourceDocuments" 
+    class="mat-elevation-z8"
+    formArrayName="arrayDocs"
+    >
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
     <!-- Position Column -->
     <ng-container matColumnDef="isChecked">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
+      <td class="center" mat-cell *matCellDef="let element; let i = index" class="tdContainer" [formGroupName]="i">
         <mat-checkbox
+          formControlName="isChecked"
           [checked]="element.isChecked"
-          (click)="changeChkState(element.id)"
+          (click)="changeChkState(element, i)"
         ></mat-checkbox>
       </td>
     </ng-container>
@@ -38,9 +48,12 @@
       <th  mat-header-cell *matHeaderCellDef>
         <p class="tdcontent">FECHA</p>
       </th>
-      <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
-        <p class="tdcontent"></p>
-        {{ element.fecha | date: "dd/mm/yyyy" }}
+      <td class="center" mat-cell *matCellDef="let element, let index = index" class="tdContainer" [formGroupName]="index">
+        <ng-container >
+          <p class="tdcontent"></p>
+          {{ element.fecha | date: "dd/mm/yyyy" }}
+
+        </ng-container>
       </td>
     </ng-container>
 
@@ -50,9 +63,32 @@
         <p class="tdcontent">ESTADO</p>
       </th>
       <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
-        <p class="tdcontent">
-          {{ element.estado }}
-        </p>
+        <div class="row tdcontent">
+          <div>
+            <ng-container *ngIf="element.estado == 'finalizado'">
+              <div class="circle green">
+              </div>
+            </ng-container>
+            <ng-container *ngIf="element.estado == 'por firmar'">
+              <div class="circle yellow">
+              </div>
+            </ng-container>
+            <ng-container *ngIf="element.estado == 'rechazado'">
+              <div class="circle red">
+              </div>
+            </ng-container>
+            <ng-container *ngIf="element.estado == 'cancelado'">
+              <div class="circle purple">
+              </div>
+            </ng-container>
+          </div>
+
+          <div>
+            <p class="tdcontent">
+              {{ element.estado }}
+            </p>
+          </div>
+        </div>
       </td>
     </ng-container>
     <ng-container matColumnDef="Progreso">
@@ -93,7 +129,18 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr mat-row 
+        *matRowDef="let row; let index = index ; columns: displayedColumns"
+        [formGroupName]="index"
+        (click)="logRow(row)"
+    ></tr>
+    <!-- <tr mat-row 
+        *matRowDef="let row; let index = index ; columns: displayedColumns"
+        [formGroupName]="index"
+        [ngClass]="{bgligth: row.isChecked === true }"
+        (click)="logRow(row)"
+    ></tr> -->
   </table>
+</div>
   <hr />
 </div>

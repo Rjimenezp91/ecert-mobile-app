@@ -43,12 +43,13 @@ button.mat-focus-indicator.loginBtn.mat-raised-button.mat-button-base.mat-button
     width: 100vw;
 }
 
-/* .container{
+.container{
     padding: 5px;
     min-height: calc(100vh - 64px);
+    background: #f5f5ff;
 
 } 
-*/
+
 .vw100{
 width: 100vw;
 }
@@ -57,3 +58,11 @@ mat-sidenav-content.mat-drawer-content.mat-sidenav-content.container {
     display: flex;
     justify-content: center;
 }
+
+/* tr.mat-row.cdk-row.ng-star-inserted{
+background-color: var(--lightMainColor);
+} */
+.bgligth{
+background-color: var(--lightMainColor);
+}
+
