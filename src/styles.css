@@ -3,6 +3,7 @@
 :root{
     --mainColor: #0055b8;
     --lightMainColor: #aabbee;
+    --secondaryColor: #018ccf;
     --gray: #808285;
     --lightray: #aeb0b3;
 }
@@ -66,3 +67,7 @@ background-color: var(--lightMainColor);
 background-color: var(--lightMainColor);
 }
 
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: var(--mainColor
+    );
+}

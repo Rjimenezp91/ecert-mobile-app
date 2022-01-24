@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         this.isLogged = this._authService.isLogged
         if(this.isLogged){
           this.event.emit(this.isLogged)
-          this.router.navigate(['/home'])
+          this.router.navigate(['/mis-documentos'])
         }
         return; 
      }

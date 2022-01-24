@@ -16,7 +16,7 @@
 
     <!-- Position Column -->
     <ng-container matColumnDef="isChecked">
-      <th mat-header-cell *matHeaderCellDef></th>
+      <th mat-header-cell *matHeaderCellDef ></th>
       <td class="center" mat-cell *matCellDef="let element; let i = index" class="tdContainer" [formGroupName]="i">
         <mat-checkbox
           formControlName="isChecked"
@@ -26,7 +26,7 @@
       </td>
     </ng-container>
     <ng-container matColumnDef="Documento">
-      <th mat-header-cell *matHeaderCellDef>{{ "documento" | uppercase }}</th>
+      <th mat-header-cell *matHeaderCellDef class="headerTxt">{{ "documento" | uppercase }}</th>
       <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
         <p class="tdcontent">{{ element.file }}</p>
       </td>
@@ -35,7 +35,7 @@
 
     <!-- Name Column -->
     <ng-container matColumnDef="Solicitante">
-      <th mat-header-cell *matHeaderCellDef>
+      <th mat-header-cell *matHeaderCellDef class="headerTxt">
         <p class="tdcontent">SOLICITANTE</p>
       </th>
       <td class="center tdContainer" mat-cell *matCellDef="let element" class="tdContainer">
@@ -45,7 +45,7 @@
 
     <!-- Weight Column -->
     <ng-container matColumnDef="Fecha">
-      <th  mat-header-cell *matHeaderCellDef>
+      <th  mat-header-cell *matHeaderCellDef class="headerTxt">
         <p class="tdcontent">FECHA</p>
       </th>
       <td class="center" mat-cell *matCellDef="let element, let index = index" class="tdContainer" [formGroupName]="index">
@@ -59,7 +59,7 @@
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="Estado">
-      <th mat-header-cell *matHeaderCellDef>
+      <th mat-header-cell *matHeaderCellDef class="headerTxt">
         <p class="tdcontent">ESTADO</p>
       </th>
       <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
@@ -92,7 +92,7 @@
       </td>
     </ng-container>
     <ng-container matColumnDef="Progreso">
-      <th mat-header-cell *matHeaderCellDef>
+      <th mat-header-cell *matHeaderCellDef class="headerTxt">
         <p class="tdcontent">PROGRESO</p>
       </th>
       <td class="center" mat-cell *matCellDef="let element" class="tdContainer">
@@ -102,7 +102,7 @@
       </td>
     </ng-container>
     <ng-container matColumnDef="Opciones">
-      <th mat-header-cell *matHeaderCellDef>
+      <th mat-header-cell *matHeaderCellDef class="headerTxt">
         <p class="tdcontent">OPCIONES</p>
       </th>
       <td class="center"  mat-cell *matCellDef="let element" class="tdContainer">
@@ -128,7 +128,7 @@
       </td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="headerTR"></tr>
     <tr mat-row 
         *matRowDef="let row; let index = index ; columns: displayedColumns"
         [formGroupName]="index"

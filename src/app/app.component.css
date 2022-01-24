@@ -2,14 +2,16 @@
     height: 100vh;
 }
 
-mainContainer .logo{
+.logo{
     height: 50px;
+    width: 170px;
 }
 
 .mainContainer .containerLinks{
     width: 50vw;
     max-width: 200px;
-    justify-content: space-between;
+    height: 780px;
+    position: relative;
 }
 
 .mainContainer .containerLinks .link{
@@ -83,7 +85,47 @@ li.link.active {
     color: var(--gray);
 }
 
+
 .separated{
     display: flex;
     justify-content: space-between;
+}
+
+ul {
+    margin-top: 100px;
+}
+
+.sidenavFooter {
+    bottom: 10px;
+    position: absolute;
+}
+.powered{
+    color: var(--mainColor);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.cerrarSesion{
+    box-shadow: none
+}
+
+.logoutContainer{
+    align-items: center;
+}
+
+.logo.header{
+    position: absolute;
+    top: 0;
+}
+
+.welcomeContainer{
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.welcomeText{
+    color: var(--mainColor);
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0px;
 }

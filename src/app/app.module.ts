@@ -16,6 +16,10 @@ import { AuthService } from './services/auth.service';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { MisDocumentosComponent } from './components/mis-documentos/mis-documentos.component';
 import { DialogPdfComponent } from './components/shared/dialogs/dialog-pdf/dialog-pdf.component';
+import { MisContactosComponent } from './components/mis-contactos/mis-contactos.component';
+import { EnviarDocumentosComponent } from './components/enviar-documentos/enviar-documentos.component';
+import { HabilitaFirmasComponent } from './components/habilita-firmas/habilita-firmas.component';
+import { AutomatizaFirmasComponent } from './components/automatiza-firmas/automatiza-firmas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,11 @@ import { DialogPdfComponent } from './components/shared/dialogs/dialog-pdf/dialo
     HomeComponent,
     HeaderComponent,
     MisDocumentosComponent,
-    DialogPdfComponent
+    DialogPdfComponent,
+    MisContactosComponent,
+    EnviarDocumentosComponent,
+    HabilitaFirmasComponent,
+    AutomatizaFirmasComponent
   ],
   imports: [
     BrowserModule,

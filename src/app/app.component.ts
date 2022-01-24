@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title = 'ecert-mobile-app';
   userAuth:boolean = true;
   opened:boolean= false;
+  nombre: string = 'rodrigo';
 
   constructor(private _auth: AuthService){
     

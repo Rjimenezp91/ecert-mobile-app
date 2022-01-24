@@ -49,3 +49,18 @@ margin: 10px 20px;
 .purple{
     background-color: purple;
 }
+
+h1.vw100{
+    color: var(--mainColor);
+    font-weight: bold;
+    margin: 15px 0px;
+}
+
+.headerTR{
+    background-color: var(--secondaryColor);
+
+}
+.headerTxt{
+    color: white;
+    font-weight: bold;
+}
