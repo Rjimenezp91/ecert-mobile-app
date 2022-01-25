@@ -1,0 +1,10 @@
+.headerLogo{
+    height: 50px;
+    width: 150px;
+}
+.toolbar{
+    background-color: var(--secondaryColor);
+}
+.hamburguer{
+    color: #fff;
+}

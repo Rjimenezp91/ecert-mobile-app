@@ -1,0 +1,69 @@
+.loginContainer{
+    position: relative;
+    height: 90vh;
+    min-height: 400px;
+    max-height: 760px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    max-width: 560px;
+}
+mat-form-field {
+    width: 100%;
+}
+
+
+.loginContainer .titleContainer{
+    margin-top: 0;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginContainer .titleContainer h1.title{
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--mainColor);
+    font-size: 3em;
+}
+.loginContainer .titleContainer p.subtitle{
+    color: var(--gray);
+    font-size: 1.5em;
+
+}
+
+.passwordContainer{
+    display: flex; 
+    justify-content: space-between;
+}
+.loginContainer .loginBtn{
+    width: 100%;
+    background-color: var(--mainColor);
+    color: #fff;
+    height: 50px;
+    border-radius: 10px;
+    margin: 25px 0;
+}
+.loginContainer .link_bold{
+    color:var(--mainColor);
+    font-weight: 700;
+}
+
+p{
+    color: var(--gray);
+}
+
+.loginContainer .divisor{
+    width: 100%;
+    color: var(--lightray);
+    margin: 15px 0;
+}
+.loginContainer .logo{
+    height: 50px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    padding-bottom: 0;
+}

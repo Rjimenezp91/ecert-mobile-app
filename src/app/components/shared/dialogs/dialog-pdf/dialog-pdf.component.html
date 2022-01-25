@@ -1,0 +1,18 @@
+<div class="modalContainer">
+    <div *ngIf="isLoaded" class="btnContainer">
+            <button class="mat-fab" (click)="prevPage()" [disabled]="page === 1"><mat-icon>arrow_back</mat-icon></button>
+            <button class="mat-fab" (click)="nextPage()" [disabled]="page === totalPages"><mat-icon>arrow_forward</mat-icon></button>
+            <button class="mat-fab" (click)="zoomOut()" ><mat-icon>remove</mat-icon></button>
+            <button class="mat-fab" (click)="zoomIn()" ><mat-icon>add</mat-icon></button>
+    </div>
+    
+    <pdf-viewer [src]="pdfSrc"
+    [render-text]="true"
+    [original-size]="false"
+    style="width: auto; height: 700px"
+    [show-all]="false"
+    [page]="page"
+    [zoom]= "zoom"
+    (after-load-complete)="afterLoadComplete($event)"
+    ></pdf-viewer>
+</div>

@@ -1,0 +1,39 @@
+<div class="loginContainer">
+    <div class="titleContainer">
+        <h1 class="title">Bienvenido</h1>
+    <p class="subtitle">Portal Empresas</p>
+    </div>
+    <form [formGroup]="this.loginForm" (ngSubmit)="onSubmit()" >
+        <div style="margin-bottom: 20px;">
+
+            <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label >RUN</mat-label>
+                <input matInput formControlName="run" placeholder="Ingrese su RUN">
+                
+            </mat-form-field>
+            <mat-error *ngIf="getRun.hasError('pattern')" >
+                ingrese un RUN <strong>válido</strong>
+            </mat-error>
+        </div>
+
+
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Contraseña</mat-label>
+            <div class="passwordContainer">
+                    <input matInput formControlName="password" [type]="isSecret ? 'password' : 'text'" placeholder="Ingrese su Contraseña" maxlength="11">
+                    <mat-icon (click)="isSecret = !isSecret">{{isSecret ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </div>
+
+        </mat-form-field>
+        <mat-error *ngIf="getPassword.hasError('minlength')" >
+            la contraseña debe tener al menos <strong>5 carácteres</strong> 
+        </mat-error>
+        <button mat-raised-button [disabled]="getRun.invalid || getPassword.invalid" class="loginBtn">Iniciar Sesión</button>
+    </form>
+    <p class="link_bold">¿Olvidó su contraseña?</p>
+    <hr class="divisor">
+
+    <p>¿Eres nuevo en Portal Empresas?</p>
+    <p class="link_bold">Consule el manual de usuario</p>
+    <img src="assets/img/ecertlogo.png" class="logo">
+</div>

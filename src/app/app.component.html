@@ -1,0 +1,78 @@
+<ng-container *ngIf="!userAuth">
+  <app-login (event)="setUserAuth($event)"></app-login>
+</ng-container>
+
+<ng-container *ngIf="userAuth">
+  <div class="mainContainer">
+
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <mat-sidenav-container >
+      <mat-sidenav #sidenav mode="side" [(opened)]="opened" style="display: flex; justify-content: space-between;">
+        <div class="column containerLinks">
+          <!-- <img src="assets/img/ecertlogo.png" class="logo header" /> -->
+          <div class="iconContainer">
+            <img src="../assets/img/usuario.png" alt="" class="imgUser">
+          </div>
+          <div class="welcomeContainer">
+            <p class="welcomeText">Bienvenido {{nombre | titlecase}}</p>
+          </div>
+          <ul>
+            <li routerLinkActive="active" [routerLink]="['/home']" class="link">
+              <mat-icon class="matIcon">home</mat-icon>
+              <a  routerLinkActive="active"> Inicio</a>
+            </li>
+            <li routerLinkActive="active" class="link" [routerLink]="['/mis-documentos']">
+              <mat-icon class="matIcon">border_color</mat-icon>
+              <a  routerLinkActive="active"
+                >Mis documentos</a
+              >
+            </li>
+            <li routerLinkActive="active" class="link" [routerLink]="['/envia-documentos']">
+              <mat-icon class="matIcon">forward_to_inbox</mat-icon>
+              <a  routerLinkActive="active"
+                >Envía documentos</a
+              >
+            </li>
+            <li routerLinkActive="active" class="link" [routerLink]="['/mis-contactos']">
+              <mat-icon class="matIcon">people</mat-icon>
+              <a  routerLinkActive="active"
+                >Mis contactos</a
+              >
+            </li>
+            <li routerLinkActive="active" class="link" [routerLink]="['/habilita-firmas']">
+              <mat-icon class="matIcon">edit_calendar</mat-icon>
+              <a  routerLinkActive="active"
+                >Habilita firmas</a
+              >
+            </li>
+            <li routerLinkActive="active" class="link" [routerLink]="['/automatiza-firmas']">
+              <mat-icon class="matIcon">rotate_right</mat-icon>
+              <a  routerLinkActive="active"
+                >Automatiza firmas</a
+              >
+            </li>
+     
+          </ul>
+
+          <div class="sidenavFooter">
+            <p class="powered">Powered by</p>
+            <img src="assets/img/ecertlogo.png" class="logo" style="margin-bottom: 5px;" />
+            <hr>
+            <button class="mat-raised-button cerrarSesion" >
+            <div class="row logoutContainer" (click)="logOut()">
+              <mat-icon>logout</mat-icon>
+              <span>Cerrar sesión</span>
+
+            </div>
+            </button>
+          </div>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content class="container">
+        <div class="row">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</ng-container>

@@ -1,0 +1,141 @@
+.mainContainer{
+    height: 100vh;
+}
+
+.logo{
+    height: 50px;
+    width: 170px;
+}
+
+.mainContainer .containerLinks{
+    width: 50vw;
+    max-width: 200px;
+    height: 780px;
+    position: relative;
+}
+
+.mainContainer .containerLinks .link{
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+.mainContainer .containerLinks .link a{
+    text-decoration: none;
+    color: var(--gray);
+}
+.mainContainer .containerLinks .link .active a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--mainColor);
+
+}
+.mainContainer .containerLinks  .link:hover{
+    text-decoration: none;
+    background-color: var(--mainColor);
+    transition: .3s ease-in-out;
+    color: #fff;
+}
+.mainContainer .containerLinks  .link:hover a{
+    text-decoration: none;
+    transition: .3s ease-in-out;
+    color: #fff;
+}
+
+li.link.active {
+
+    color: var(--mainColor);
+    background: var(--lightMainColor);
+    height: inherit;
+    width: inherit;
+    font-weight: bold;
+}
+
+.mainContainer .containerLinks .link a.active {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--mainColor);
+}
+.mainContainer .containerLinks .link:hover a.active {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.mainContainer .containerLinks .link .matIcon {
+    margin-right: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.mainContainer .containerLinks .link:hover .matIcon {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+
+.mainContainer .containerLinks .link .active .matIcon{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--mainColor);
+
+}
+
+.matIcon{
+    margin-right: 5px;
+    color: var(--gray);
+}
+
+
+.separated{
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    margin-top: 60px;
+}
+
+.sidenavFooter {
+    bottom: 10px;
+    position: absolute;
+}
+.powered{
+    color: var(--mainColor);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.cerrarSesion{
+    box-shadow: none
+}
+
+.logoutContainer{
+    align-items: center;
+}
+
+.logo.header{
+    position: absolute;
+    top: 0;
+}
+
+.welcomeContainer{
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.welcomeText{
+    color: var(--mainColor);
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0px;
+}
+.iconContainer{
+    display: flex;
+    justify-content: center;
+}
+.imgUser{
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    color: var(--mainColor);
+}
