@@ -2,26 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
 
-## Development server
+# Antes de usar
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Por motivos de tiempo no la alcancé a hacer responsive, por lo que idealmente hay que ajustar el visualizador en modo dispositivo (tamaño usado como referencia el iphone 12)
 
-## Code scaffolding
+# Login
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Tiene un validador de rut, a nivel de formulario que lo valida con una expresion regular y con una función, aplicando la lógica del modulo 11 para calcular los RUT chilenos y la contraseña tiene que ser mayor a 5 caracteres para autorizar al usuario.
 
-## Build
+# Mis Documentos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Tabla con mis documentos que consume la data de un array dummy en el codigo, permite eliminar item de la tabla, descargar pdf, visualizarlo en un modal con la opcion de cambiar de pagina y hacer zoom
 
-## Running unit tests
+# Auth
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+la autorización es ficticia, pero aplica la logica de restriccion de acceso a las rutas por el Guard, si el usuario está autorizado 
