@@ -105,10 +105,10 @@
       <th mat-header-cell *matHeaderCellDef class="headerTxt">
         <p class="tdcontent">OPCIONES</p>
       </th>
-      <td class="center"  mat-cell *matCellDef="let element" class="tdContainer">
+      <td class="center"  mat-cell *matCellDef="let element; let index = index" class="tdContainer">
           <mat-icon [matMenuTriggerFor]="menu" style="margin-left: 30px">more_vert</mat-icon>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item class="btn-mat-menu" >
+          <button mat-menu-item class="btn-mat-menu" (click)="borrarDoc(index)" >
             <span class="item-mat-menu" >Borrar</span>
           </button>
           <button mat-menu-item class="btn-mat-menu" >

@@ -92,7 +92,7 @@ li.link.active {
 }
 
 ul {
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .sidenavFooter {
@@ -128,4 +128,14 @@ ul {
     font-weight: bold;
     font-size: 1.2em;
     margin-bottom: 0px;
+}
+.iconContainer{
+    display: flex;
+    justify-content: center;
+}
+.imgUser{
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    color: var(--mainColor);
 }

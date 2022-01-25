@@ -12,15 +12,13 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
 
-  // {path: 'home', component: HomeComponent},
-  {path: 'home', component: HomeComponent  },
-  {path: 'mis-documentos', component: MisDocumentosComponent  },
-  {path: 'envia-documentos', component: EnviarDocumentosComponent  },
-  {path: 'mis-contactos', component: MisContactosComponent  },
-  {path: 'habilita-firmas', component: HabilitaFirmasComponent  },
-  {path: 'automatiza-firmas', component: AutomatizaFirmasComponent  },
-  // {path: 'home', component: HomeComponent, canActivate:[AuthGuard]  },
-  // {path: '', component: MainAppComponent, canActivate:[AuthGuard]  },
+  {path: 'home', component: HomeComponent, canActivate:[AuthGuard]   },
+  {path: 'mis-documentos', component: MisDocumentosComponent, canActivate:[AuthGuard]   },
+  {path: 'envia-documentos', component: EnviarDocumentosComponent, canActivate:[AuthGuard]   },
+  {path: 'mis-contactos', component: MisContactosComponent, canActivate:[AuthGuard]   },
+  {path: 'habilita-firmas', component: HabilitaFirmasComponent, canActivate:[AuthGuard]   },
+  {path: 'automatiza-firmas', component: AutomatizaFirmasComponent, canActivate:[AuthGuard]   },
+
 
   { path: '**', pathMatch: 'full', redirectTo: '/login' }
 ];

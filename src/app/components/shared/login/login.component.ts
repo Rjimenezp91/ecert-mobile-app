@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.createFormGroup();
-    console.log('this.isLogged',this.isLogged);
     
   }
   get getRun(){
@@ -41,8 +40,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log('loginForm', this.loginForm);
-    
    this.validaRut(this.loginForm.get('run')?.value).then(result => {
      if (result){
         this.successSnackBar();
@@ -57,7 +54,7 @@ export class LoginComponent implements OnInit {
 
      const customButton = Swal.mixin({
       customClass: {
-        confirmButton: 'mainButton',
+        confirmButton: 'mainButton mat-raised-button',
         cancelButton: 'mat-raised-button',
       },
       buttonsStyling: false

@@ -33,7 +33,6 @@ export class DialogPdfComponent implements OnInit {
     this.zoom += .5
 
 
-    console.log(this.zoom);
     
   }
   zoomOut() {
@@ -41,7 +40,6 @@ export class DialogPdfComponent implements OnInit {
     if(this.zoom <= 0){
       this.zoom = 0;
     }
-    console.log(this.zoom);
   }
 
 

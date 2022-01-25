@@ -10,6 +10,9 @@
       <mat-sidenav #sidenav mode="side" [(opened)]="opened" style="display: flex; justify-content: space-between;">
         <div class="column containerLinks">
           <!-- <img src="assets/img/ecertlogo.png" class="logo header" /> -->
+          <div class="iconContainer">
+            <img src="../assets/img/usuario.png" alt="" class="imgUser">
+          </div>
           <div class="welcomeContainer">
             <p class="welcomeText">Bienvenido {{nombre | titlecase}}</p>
           </div>
@@ -56,7 +59,7 @@
             <img src="assets/img/ecertlogo.png" class="logo" style="margin-bottom: 5px;" />
             <hr>
             <button class="mat-raised-button cerrarSesion" >
-            <div class="row logoutContainer">
+            <div class="row logoutContainer" (click)="logOut()">
               <mat-icon>logout</mat-icon>
               <span>Cerrar sesión</span>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,25 +10,22 @@ import Swal from 'sweetalert2'
 })
 export class AppComponent implements OnInit {
   title = 'ecert-mobile-app';
-  userAuth:boolean = true;
+  userAuth:boolean = false;
   opened:boolean= false;
   nombre: string = 'rodrigo';
 
-  constructor(private _auth: AuthService){
+  constructor(private _auth: AuthService, private router: Router){
     
   }
 
-  ngOnInit(){
-    console.log('userAuth', this.userAuth);
-    
-  }
+  ngOnInit(){}
   setUserAuth($event){
     this.userAuth = $event;
     
   }
   logOut(){
-    this._auth.isLogged = false;
-    this.userAuth = this._auth.isLogged;
+    this.userAuth =  this._auth.logOut();
+   this.router.navigate(['/login'])
     
   }
 
